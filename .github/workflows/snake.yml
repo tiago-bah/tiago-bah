@@ -1,1 +1,34 @@
+name: Generate Snake Contribution Graph
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate snake graph
+        uses: Platane/snk@v3
+        with:
+          github_user_name: "tiago-bah"
+          outputs: |
+            dist/snake-contribution-graph.svg
+            dist/snake-contribution-graph-dark.svg
+
+      - name: Publish to output branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          allow_empty_commit: false
+          keep_files: false
 
