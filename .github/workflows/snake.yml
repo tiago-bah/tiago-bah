@@ -1,1 +1,30 @@
+name: Generate Pacman Contribution Graph
 
+on:
+  schedule:
+    - cron: "0 0 * * *" # Atualiza diariamente à meia-noite (UTC)
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: 🎮 Gerar gráfico estilo Pac-Man
+        uses: Platane/snk@v3
+        with:
+          github_user_name: "tiago-bah"
+          outputs: |
+            dist/pacman-contribution-graph.svg
+            dist/pacman-contribution-graph-dark.svg
+
+      - name: 🚀 Criar branch output e publicar
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          allow_empty_commit: false
+          keep_files: false
