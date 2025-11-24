@@ -18,15 +18,13 @@
 <img src="https://skillicons.dev/icons?i=js,html,css" height="70" />
 </div>
 
-
-
-
 <div align="center"> 
   <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&reversal=false&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&stroke=-&descSize=20&descAlign=50&descAlignY=50&theme=cobalt"  />
 </div>
+
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tiago-bah/output/pacman-contribution-graph-dark.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tiago-bah/tiago-bah/output/pacman-contribution-graph-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tiago-bah/tiago-bah/output/pacman-contribution-graph.svg">
     <img src="https://raw.githubusercontent.com/tiago-bah/tiago-bah/output/pacman-contribution-graph.svg" width="100%">
   </picture>
